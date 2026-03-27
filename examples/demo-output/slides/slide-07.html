@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 100vw; height: 100vh; overflow: hidden;
+  background: radial-gradient(ellipse at center, #f0f0f0 0%, #d8d8d8 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.container { width: 85vw; }
+.heading {
+  font-size: 2vw; font-weight: 600; color: #1a1a2e; margin-bottom: 1vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.0s forwards;
+}
+.accent-line {
+  width: 5vw; height: 0.3vh;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  margin-bottom: 1.5vh; transform-origin: left;
+  opacity: 0; animation: scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) 1.3s forwards;
+}
+.sub-heading {
+  font-size: 1.1vw; font-weight: 400; color: #6b7280; margin-bottom: 4vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.4s forwards;
+}
+.items { display: flex; flex-direction: column; gap: 1.8vh; }
+.item {
+  display: flex; align-items: flex-start; gap: 1.5vw;
+  opacity: 0; animation: slideIn 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.item:nth-child(1) { animation-delay: 1.6s; }
+.item:nth-child(2) { animation-delay: 1.9s; }
+.item:nth-child(3) { animation-delay: 2.2s; }
+.item:nth-child(4) { animation-delay: 2.5s; }
+.item:nth-child(5) { animation-delay: 2.8s; }
+.badge {
+  flex-shrink: 0;
+  width: 3vw; height: 3vw;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  border-radius: 0.6vw;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3vw; font-weight: 700; color: #fff;
+}
+.item-content {
+  background: rgba(255,255,255,0.7);
+  border: 0.1vw solid rgba(0,0,0,0.08); border-radius: 0.8vw;
+  padding: 1.8vh 2vw; flex: 1;
+  display: flex; align-items: baseline; gap: 1.5vw;
+}
+.item-title {
+  font-size: 1.1vw; font-weight: 600; color: #1a1a2e;
+  flex-shrink: 0;
+}
+.item-detail {
+  font-size: 0.9vw; font-weight: 400; color: #6b7280;
+  line-height: 1.4;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(2vh); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-3vw); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="heading">Q4 roadmap</div>
+  <div class="accent-line"></div>
+  <div class="sub-heading">Five key priorities for the next quarter</div>
+  <div class="items">
+    <div class="item">
+      <div class="badge">1</div>
+      <div class="item-content">
+        <div class="item-title">Advanced filtering</div>
+        <div class="item-detail">Multi-dimensional query builder with saved filter presets</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="badge">2</div>
+      <div class="item-content">
+        <div class="item-title">Real-time dashboards</div>
+        <div class="item-detail">Live streaming widgets with sub-second refresh and team sharing</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="badge">3</div>
+      <div class="item-content">
+        <div class="item-title">Webhook integrations</div>
+        <div class="item-detail">Event-driven triggers for Slack, PagerDuty, and custom endpoints</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="badge">4</div>
+      <div class="item-content">
+        <div class="item-title">Mobile companion app</div>
+        <div class="item-detail">iOS and Android with offline-first sync and push alerts</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="badge">5</div>
+      <div class="item-content">
+        <div class="item-title">SOC 2 Type II</div>
+        <div class="item-detail">Audit completion targeted for end of Q4, covering all Nexus services</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

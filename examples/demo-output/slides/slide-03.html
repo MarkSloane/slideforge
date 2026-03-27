@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 100vw; height: 100vh; overflow: hidden;
+  background: radial-gradient(ellipse at center, #f0f0f0 0%, #d8d8d8 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.container { width: 85vw; }
+.heading {
+  font-size: 2vw; font-weight: 600; color: #1a1a2e; margin-bottom: 1vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.0s forwards;
+}
+.accent-line {
+  width: 5vw; height: 0.3vh;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  margin-bottom: 1.5vh; transform-origin: left;
+  opacity: 0; animation: scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) 1.3s forwards;
+}
+.sub-heading {
+  font-size: 1.1vw; font-weight: 400; color: #6b7280; margin-bottom: 5vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.4s forwards;
+}
+.bar-group {
+  margin-bottom: 4vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.bar-group:nth-child(1) { animation-delay: 1.6s; }
+.bar-group:nth-child(2) { animation-delay: 1.9s; }
+.bar-group-label {
+  font-size: 1.1vw; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5vh;
+}
+.bar-row {
+  display: flex; align-items: center; margin-bottom: 1.2vh;
+}
+.bar-label {
+  font-size: 0.9vw; font-weight: 400; color: #6b7280;
+  width: 12vw; flex-shrink: 0;
+}
+.bar-track {
+  flex: 1; height: 3.5vh; background: rgba(0,0,0,0.06);
+  border-radius: 0.4vw; overflow: hidden; position: relative;
+}
+.bar-fill-nexus {
+  height: 100%; border-radius: 0.4vw;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  transform-origin: left;
+  opacity: 0; animation: scaleIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.bar-fill-legacy {
+  height: 100%; border-radius: 0.4vw;
+  background: rgba(0,0,0,0.15);
+  transform-origin: left;
+  opacity: 0; animation: scaleIn 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.bar-group:nth-child(1) .bar-row:nth-child(2) .bar-fill-nexus { animation-delay: 1.8s; width: 15%; }
+.bar-group:nth-child(1) .bar-row:nth-child(3) .bar-fill-legacy { animation-delay: 2.0s; width: 100%; }
+.bar-group:nth-child(2) .bar-row:nth-child(2) .bar-fill-nexus { animation-delay: 2.1s; width: 90%; }
+.bar-group:nth-child(2) .bar-row:nth-child(3) .bar-fill-legacy { animation-delay: 2.3s; width: 10%; }
+.bar-value {
+  font-size: 0.9vw; font-weight: 600; color: #1a1a2e;
+  margin-left: 1.2vw; min-width: 6vw;
+}
+.bars-container { display: flex; flex-direction: column; gap: 0; }
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(2vh); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="heading">Performance benchmarks</div>
+  <div class="accent-line"></div>
+  <div class="sub-heading">Nexus vs. legacy platform</div>
+  <div class="bars-container">
+    <div class="bar-group">
+      <div class="bar-group-label">Query speed</div>
+      <div class="bar-row">
+        <div class="bar-label">Nexus</div>
+        <div class="bar-track"><div class="bar-fill-nexus"></div></div>
+        <div class="bar-value">180 ms</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Legacy</div>
+        <div class="bar-track"><div class="bar-fill-legacy"></div></div>
+        <div class="bar-value">1,200 ms</div>
+      </div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-group-label">Concurrent users</div>
+      <div class="bar-row">
+        <div class="bar-label">Nexus</div>
+        <div class="bar-track"><div class="bar-fill-nexus"></div></div>
+        <div class="bar-value">45,000</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Legacy</div>
+        <div class="bar-track"><div class="bar-fill-legacy"></div></div>
+        <div class="bar-value">5,000</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

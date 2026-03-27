@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 100vw; height: 100vh; overflow: hidden;
+  background: radial-gradient(ellipse at center, #f0f0f0 0%, #d8d8d8 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.container { width: 85vw; }
+.heading {
+  font-size: 2vw; font-weight: 600; color: #1a1a2e; margin-bottom: 1vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.0s forwards;
+}
+.accent-line {
+  width: 5vw; height: 0.3vh;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  margin-bottom: 1.5vh; transform-origin: left;
+  opacity: 0; animation: scaleIn 0.5s cubic-bezier(0.16,1,0.3,1) 1.3s forwards;
+}
+.sub-heading {
+  font-size: 1.1vw; font-weight: 400; color: #6b7280; margin-bottom: 4vh;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.4s forwards;
+}
+.comparison {
+  display: flex; gap: 2vw; align-items: stretch;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.6s forwards;
+}
+.column {
+  flex: 1; background: rgba(255,255,255,0.7);
+  border: 0.1vw solid rgba(0,0,0,0.08); border-radius: 0.8vw;
+  padding: 3vh 2.5vw;
+}
+.column.nexus {
+  opacity: 0; animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.7s forwards;
+}
+.column.legacy {
+  opacity: 0; animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 2.0s forwards;
+}
+.column-title {
+  font-size: 1.4vw; font-weight: 700; margin-bottom: 2.5vh;
+  letter-spacing: -0.01em;
+}
+.column.nexus .column-title { color: #e94560; }
+.column.legacy .column-title { color: #6b7280; }
+.column-divider {
+  width: 100%; height: 0.15vh;
+  background: rgba(0,0,0,0.08); margin-bottom: 2.5vh;
+}
+.metric-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 2vh;
+}
+.metric-label {
+  font-size: 0.95vw; font-weight: 400; color: #6b7280;
+}
+.metric-value {
+  font-size: 1.3vw; font-weight: 600; color: #1a1a2e;
+}
+.column.nexus .metric-value { color: #1a1a2e; }
+.column.legacy .metric-value { color: #9ca3af; }
+.vs-divider {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; width: 3vw;
+}
+.vs-text {
+  font-size: 1vw; font-weight: 700; color: #6b7280;
+  opacity: 0; animation: fadeIn 0.6s cubic-bezier(0.16,1,0.3,1) 2.3s forwards;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(2vh); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="heading">Nexus vs. legacy</div>
+  <div class="accent-line"></div>
+  <div class="sub-heading">Head-to-head platform comparison</div>
+  <div class="comparison">
+    <div class="column nexus">
+      <div class="column-title">Nexus</div>
+      <div class="column-divider"></div>
+      <div class="metric-row">
+        <div class="metric-label">Query speed</div>
+        <div class="metric-value">180 ms</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Concurrent capacity</div>
+        <div class="metric-value">45,000</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Cost per seat</div>
+        <div class="metric-value">$18 / mo</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Setup time</div>
+        <div class="metric-value">15 min</div>
+      </div>
+    </div>
+    <div class="vs-divider">
+      <div class="vs-text">vs.</div>
+    </div>
+    <div class="column legacy">
+      <div class="column-title">Legacy</div>
+      <div class="column-divider"></div>
+      <div class="metric-row">
+        <div class="metric-label">Query speed</div>
+        <div class="metric-value">1,200 ms</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Concurrent capacity</div>
+        <div class="metric-value">5,000</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Cost per seat</div>
+        <div class="metric-value">$42 / mo</div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-label">Setup time</div>
+        <div class="metric-value">3 days</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

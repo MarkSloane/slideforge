@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 100vw; height: 100vh; overflow: hidden;
+  background: radial-gradient(ellipse at center, #f0f0f0 0%, #d8d8d8 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.container { text-align: center; width: 85vw; }
+.title {
+  font-size: 5.5vw; font-weight: 700; color: #1a1a2e;
+  letter-spacing: -0.02em; line-height: 1.1;
+  max-width: 70vw; margin: 0 auto;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.0s forwards;
+}
+.divider {
+  width: 8vw; height: 0.4vh;
+  background: linear-gradient(90deg, #e94560, #c23152);
+  margin: 3vh auto; transform-origin: left;
+  opacity: 0; animation: scaleIn 0.6s cubic-bezier(0.16,1,0.3,1) 1.4s forwards;
+}
+.subtitle {
+  font-size: 1.8vw; font-weight: 300; color: #6b7280;
+  letter-spacing: 0.02em;
+  opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 1.8s forwards;
+}
+.speaker {
+  font-size: 1.2vw; font-weight: 400; color: #6b7280; margin-top: 1.5vh;
+  opacity: 0; animation: fadeIn 0.8s cubic-bezier(0.16,1,0.3,1) 2.2s forwards;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(2vh); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title">Nexus platform: Q3 product launch review</div>
+  <div class="divider"></div>
+  <div class="subtitle">Quarterly performance summary</div>
+  <div class="speaker">Jordan Chen, VP of Engineering</div>
+</div>
+</body>
+</html>

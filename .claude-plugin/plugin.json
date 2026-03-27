@@ -1,0 +1,11 @@
+{
+  "name": "slideforge",
+  "description": "Turn any text into broadcast-quality animated slide decks with CSS motion graphics. Generates self-contained HTML presentations with optional native PPTX export.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mark Sloane"
+  },
+  "homepage": "https://github.com/MarkSloane/slideforge",
+  "repository": "https://github.com/MarkSloane/slideforge",
+  "license": "MIT"
+}
