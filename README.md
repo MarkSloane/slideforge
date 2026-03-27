@@ -18,6 +18,8 @@ Generated from a [44-line product launch review](examples/demo-content.txt):
 
 Every slide includes CSS entrance animations (fade, slide, scale, pop) with staggered timing. [View the demo content](examples/demo-content.txt) or [browse the generated HTML](examples/demo-output/).
 
+> **Note:** To view the interactive presentation locally, clone the repo or download the full `examples/demo-output/` folder — the player needs the `slides/` subfolder alongside it. Individual slide HTML files are self-contained and work on their own.
+
 ---
 
 ## Installation
